@@ -9,7 +9,7 @@ Desenvolvido durante o curso Fullstack da [Academia do Programador](https://www.
 ---
 ## Detalhes
 
-Dados três valores X, Y, Z, verifiquem se eles podem ser os comprimentos dos lados de um triângulo e se forem escrever uma mensagem informando se é um triângulo eqüilátero, isósceles ou escaleno.
+Dados três valores X, Y, Z, verifiquem se eles podem ser os comprimentos dos lados de um triângulo e se forem escrever uma mensagem informando se é um triângulo eqüilátero, isósceles, retângulo ou escaleno.
 
 ---
 ## Entrada
