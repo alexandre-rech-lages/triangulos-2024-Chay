@@ -1,10 +1,34 @@
-﻿namespace Triangulos.ConsoleApp
+﻿using System.Data;
+namespace Triangulator.ConsoleApp
 {
-    internal class Program
+    internal partial class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            while (true)
+            {
+                Triangulator triangulo = new Triangulator();
+                string continua = null;
+
+                triangulo.ValidaTriangulo(ref continua);
+
+                if (continua == "N" || continua == "n") break;
+
+                triangulo.DefineTipo();
+
+                if (DeveContinuar(ref continua)) break;
+            }
+        }
+        static int RecebeLado(string texto)
+        {
+            Console.Write(texto);
+            return Convert.ToInt32(Console.ReadLine());
+        }
+        static bool DeveContinuar(ref string continua)
+        {
+            Console.WriteLine("\nDeseja tentar novamente? [S,N]");
+            continua = Console.ReadLine();
+            return continua == "N" || continua == "n";
         }
     }
 }
