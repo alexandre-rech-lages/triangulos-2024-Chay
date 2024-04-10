@@ -1,30 +1,38 @@
 ﻿using System.Data;
 namespace Triangulator.ConsoleApp
 {
-    internal partial class Program
+    internal class TriangulatorApp
     {
         static void Main(string[] args)
         {
             while (true)
             {
-                Triangulator triangulo = new Triangulator();
-                string continua = null;
+                Console.Clear();
 
-                triangulo.ValidaTriangulo(ref continua);
+                Triangulo triangulo = new Triangulo();
 
-                if (continua == "N" || continua == "n") break;
+                triangulo.X = RecebeLado("Digite o Lado X: ");
+                triangulo.Y = RecebeLado("Digite o Lado Y: ");
+                triangulo.Z = RecebeLado("Digite o Lado Z: ");
 
-                triangulo.DefineTipo();
+                Console.WriteLine("Tipo do Triangulo:  " + triangulo.ObterTipo());
 
-                if (DeveContinuar(ref continua)) break;
+                if (DeveContinuar() == "N")
+                    break;
             }
         }
 
-        static bool DeveContinuar(ref string continua)
+        static string DeveContinuar()
         {
-            Console.WriteLine("\nDeseja tentar novamente? [S,N]");
-            continua = Console.ReadLine();
-            return continua == "N" || continua == "n";
+            Console.WriteLine("\nDeseja verificar outro triangulo ? [S,N]");
+            return Console.ReadLine();
+        }
+
+        static int RecebeLado(string texto)
+        {
+            Console.Write(texto);
+
+            return Convert.ToInt32(Console.ReadLine());
         }
     }
 }
