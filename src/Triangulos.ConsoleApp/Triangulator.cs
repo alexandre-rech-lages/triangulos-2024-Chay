@@ -44,12 +44,5 @@
             Console.Write(texto);
             return Convert.ToInt32(Console.ReadLine());
         }
-
-        static bool DeveContinuar(ref string continua)
-        {
-            Console.WriteLine("\nDeseja tentar novamente? [S,N]");
-            continua = Console.ReadLine();
-            return continua == "N" || continua == "n";
-        }
     }
 }

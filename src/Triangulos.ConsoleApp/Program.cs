@@ -19,5 +19,12 @@ namespace Triangulator.ConsoleApp
                 if (DeveContinuar(ref continua)) break;
             }
         }
+
+        static bool DeveContinuar(ref string continua)
+        {
+            Console.WriteLine("\nDeseja tentar novamente? [S,N]");
+            continua = Console.ReadLine();
+            return continua == "N" || continua == "n";
+        }
     }
 }
